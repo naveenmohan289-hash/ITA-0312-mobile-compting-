@@ -1,0 +1,5 @@
+scenario,mobility_level,base_delay_ms,base_loss_percent,handoff_delay_ms,bandwidth_mbps,packets
+Stationary,0,20,1,0,20,100
+Walking,1,25,2,80,12,100
+Vehicle,2,35,4,180,6,100
+High_speed,3,50,8,350,3,100
