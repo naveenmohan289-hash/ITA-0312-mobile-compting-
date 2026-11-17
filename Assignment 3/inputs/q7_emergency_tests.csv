@@ -1,0 +1,5 @@
+test_case,nodes,mobility_events,traffic_packets,link_failure_percent,base_delay_ms
+Small_static,10,1,200,0,25
+Medium_mobility,25,8,500,5,40
+Large_high_mobility,50,20,1000,15,65
+Infrastructure_outage,30,12,600,20,55
