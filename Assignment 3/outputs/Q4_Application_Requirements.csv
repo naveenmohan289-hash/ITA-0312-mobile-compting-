@@ -1,0 +1,4 @@
+application,delay_target_ms,delivery_target_percent,mobility,security,design_status
+Emergency ambulance,150,98,High,Very high,REVIEW AGAINST TEST RESULTS
+Mobile healthcare,250,99,Medium,Very high,REVIEW AGAINST TEST RESULTS
+Fleet tracking,500,95,High,High,REVIEW AGAINST TEST RESULTS
