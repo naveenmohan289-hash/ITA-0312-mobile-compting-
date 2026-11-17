@@ -1,0 +1,28 @@
+ALGORITHM RegisterAndTunnel(MN, HA, FA, CN, Packet)
+INPUT: MN home address, HA, visited FA, CoA, CN and packet
+OUTPUT: Registration and delivery state
+BEGIN
+  RECEIVE agent advertisement
+  IF visited agent not detected THEN
+    SEND agent solicitation
+    WAIT for advertisement
+  END IF
+  CoA <- OBTAIN care-of address from visited network
+  SEND authenticated RegistrationRequest(MN.HomeAddress, CoA) TO HA
+  WAIT for RegistrationReply
+  IF Reply = ACCEPTED THEN
+    Binding[MN.HomeAddress] <- CoA
+    RECEIVE packet at HA addressed to MN.HomeAddress
+    ENCAPSULATE packet with outer destination CoA
+    FORWARD encapsulated packet to FA
+    IF tunnel link = UP THEN
+      DECAPSULATE at tunnel endpoint
+      DELIVER original packet to MN
+      RETURN REGISTERED_AND_DELIVERED
+    ELSE
+      RETURN TUNNEL_DELIVERY_FAILED
+    END IF
+  ELSE
+    RETURN REGISTRATION_FAILED
+  END IF
+END
