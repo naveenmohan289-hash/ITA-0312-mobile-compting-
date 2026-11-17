@@ -1,0 +1,6 @@
+parameter,cellular,ad_hoc
+Infrastructure,Base stations and core network,No fixed infrastructure required
+Communication,Through base station,Direct or multi-hop peer forwarding
+Mobility,Managed cell handoff,Neighbour and route changes
+Routing,Infrastructure-assisted,Distributed routing
+Failure,Cell outage can disrupt service,Alternate peer route may exist
