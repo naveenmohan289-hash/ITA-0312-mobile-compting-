@@ -1,0 +1,5 @@
+test_case,nodes,mobility_events,packets_sent,packets_delivered,packets_lost,pdr_percent,estimated_average_delay_ms,aodv_control_message_estimate
+Small_static,10,1,200,200,0,100.0,33.0,3
+Medium_mobility,25,8,500,465,35,93.0,104.0,24
+Large_high_mobility,50,20,1000,800,200,80.0,225.0,60
+Infrastructure_outage,30,12,600,462,138,77.0,151.0,36
