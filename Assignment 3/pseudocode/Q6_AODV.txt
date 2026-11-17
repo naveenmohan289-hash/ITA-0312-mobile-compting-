@@ -1,0 +1,35 @@
+ALGORITHM AODVRouteDiscovery(Source, Destination)
+INPUT: Source, Destination, NeighborTable, RouteTable
+OUTPUT: Valid route or ROUTE_NOT_FOUND
+BEGIN
+  IF RouteTable[Destination].State = VALID THEN
+    RETURN RouteTable[Destination]
+  END IF
+  RouteRequestID <- RouteRequestID + 1
+  BROADCAST RREQ(Source, Destination, RouteRequestID)
+  WAIT for RREP or discovery timeout
+  IF RREP received THEN
+    INSTALL reverse and forward route entries
+    MARK destination route VALID
+    RETURN RouteTable[Destination]
+  ELSE
+    RETURN ROUTE_NOT_FOUND
+  END IF
+END
+
+ALGORITHM AODVMaintainRoute(FailedLink, Source, Destination)
+INPUT: Failed link, affected source and destination
+OUTPUT: Repaired route or failure
+BEGIN
+  MARK routes using FailedLink INVALID
+  IF alternate valid route exists THEN
+    SELECT alternate route
+    RETURN ALTERNATE_ROUTE_USED
+  END IF
+  GENERATE and SEND RERR toward affected source
+  IF source still has data to send THEN
+    INITIATE AODVRouteDiscovery(Source, Destination)
+  ELSE
+    RETURN ROUTE_TERMINATED
+  END IF
+END
