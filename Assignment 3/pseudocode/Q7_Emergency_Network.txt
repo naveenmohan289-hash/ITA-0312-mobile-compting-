@@ -1,0 +1,29 @@
+ALGORITHM EmergencyMessageDelivery(Source, Destination, Message)
+INPUT: Mobile source/destination, message, neighbour and route state
+OUTPUT: DELIVERED, QUEUED or FAILED
+BEGIN
+  IF local ad hoc route is VALID THEN
+    FORWARD Message along selected AODV next hops
+  ELSE
+    INITIATE RREQ route discovery
+    WAIT for RREP until discovery timer expires
+    IF RREP received THEN
+      INSTALL route
+      FORWARD Message
+    ELSE
+      STORE Message in priority queue
+      RETURN QUEUED_FOR_RETRY
+    END IF
+  END IF
+  IF gateway and HA are reachable AND destination is outside ad hoc network THEN
+    REGISTER current CoA with HA if attachment changed
+    HA TUNNELS packet toward current CoA
+  END IF
+  IF destination acknowledges receipt THEN
+    REMOVE Message from queue
+    RETURN DELIVERED
+  ELSE
+    RETAIN Message until retry limit or expiry
+    RETURN DELIVERY_PENDING
+  END IF
+END
