@@ -1,0 +1,5 @@
+scenario,mobility_level,bandwidth_mbps,packets_sent,packets_delivered,packets_lost,pdr_percent,estimated_delay_ms
+Stationary,0,20,100,99,1,99.0,20.0
+Walking,1,12,100,97,3,97.0,45.0
+Vehicle,2,6,100,93,7,93.0,80.0
+High_speed,3,3,100,88,12,88.0,137.5
