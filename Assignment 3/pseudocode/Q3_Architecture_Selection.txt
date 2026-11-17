@@ -1,0 +1,14 @@
+ALGORITHM SelectArchitecture(InfrastructureAvailable, RapidDeployment, MultiHopRequired)
+INPUT: Infrastructure availability, deployment urgency, multi-hop requirement
+OUTPUT: Recommended wireless architecture
+BEGIN
+  IF InfrastructureAvailable = TRUE AND broad managed coverage is required THEN
+    RETURN CELLULAR
+  ELSE IF InfrastructureAvailable = FALSE AND RapidDeployment = TRUE THEN
+    RETURN AD_HOC
+  ELSE IF MultiHopRequired = TRUE THEN
+    RETURN AD_HOC
+  ELSE
+    RETURN HYBRID
+  END IF
+END
