@@ -1,0 +1,16 @@
+ALGORITHM UpdateDSDVRoute(Node, ReceivedRoute)
+INPUT: {Destination, NextHop, HopCount, SequenceNumber}
+OUTPUT: Updated routing table
+BEGIN
+  NewHopCount <- ReceivedRoute.HopCount + 1
+  IF Destination not in RouteTable THEN
+    ADD route with received sequence number and NewHopCount
+  ELSE IF ReceivedRoute.SequenceNumber > RouteTable[Destination].SequenceNumber THEN
+    REPLACE route with fresher route
+  ELSE IF ReceivedRoute.SequenceNumber = RouteTable[Destination].SequenceNumber AND NewHopCount < RouteTable[Destination].HopCount THEN
+    REPLACE route with lower-hop route
+  ELSE
+    KEEP current route
+  END IF
+  RETURN RouteTable
+END
