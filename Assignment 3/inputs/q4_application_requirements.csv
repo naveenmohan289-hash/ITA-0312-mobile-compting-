@@ -1,0 +1,4 @@
+application,maximum_delay_ms,minimum_delivery_percent,mobility_level,security_level
+Emergency ambulance,150,98,High,Very high
+Mobile healthcare,250,99,Medium,Very high
+Fleet tracking,500,95,High,High
