@@ -1,0 +1,5 @@
+nodes,periodic_update_interval_s,control_packets_per_update,simulation_time_s
+5,5,5,60
+10,5,10,60
+20,5,20,60
+40,5,40,60
