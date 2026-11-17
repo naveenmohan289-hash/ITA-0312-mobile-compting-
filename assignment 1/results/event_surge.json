@@ -1,0 +1,15 @@
+{
+  "attendees": 25000,
+  "traffic_each_E": 0.05,
+  "event_traffic_E": 1250.0,
+  "event_zone_km2": 1.0,
+  "event_density_E_per_km2": 1250.0,
+  "township_reference_density_E_per_km2": 166.66666666666666,
+  "density_multiplier_vs_township": 7.5,
+  "N": 7,
+  "channels_per_cell": 60,
+  "2_percent_blocking_capacity_per_cell_E": 49.64407218223302,
+  "temporary_cells_required_ideal_lower_bound": 26,
+  "event_duration_hours": 4,
+  "events_per_month": 2
+}
