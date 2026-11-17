@@ -1,0 +1,24 @@
+ALGORITHM MaintainAmbulanceReachability(MN, HA, VisitedNetwork, CN)
+INPUT: Ambulance MN, HA, visited network and dispatch server CN
+OUTPUT: Registration state and message delivery state
+BEGIN
+  DETECT network attachment change
+  IF attachment changed THEN
+    OBTAIN new CareOfAddress
+    AUTHENTICATE and SEND registration request TO HA
+    WAIT for registration reply
+    IF accepted THEN
+      UPDATE HA binding to new CareOfAddress
+    ELSE
+      QUEUE non-expired messages
+      RETURN REGISTRATION_PENDING
+    END IF
+  END IF
+  IF route to current attachment is VALID THEN
+    FORWARD emergency message TO CN
+    RETURN MESSAGE_SENT
+  ELSE
+    QUEUE message and INITIATE route repair
+    RETURN STORE_AND_FORWARD
+  END IF
+END
