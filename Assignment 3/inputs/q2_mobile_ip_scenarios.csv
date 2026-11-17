@@ -1,0 +1,4 @@
+scenario,registration_delay_ms,tunnel_overhead_bytes,payload_bytes,packets,loss_percent
+Home_network,0,0,1000,50,0.5
+Visited_network,80,40,1000,50,1.5
+Frequent_handoff,220,40,1000,50,5
