@@ -1,0 +1,28 @@
+INPUT battery_pct, network, motion, charging, hot, low_power
+IF hot OR battery_pct <= 10:
+    interval = 300 seconds
+    upload = defer except emergency
+ELSE IF low_power OR battery_pct <= 20:
+    interval = 120 seconds
+    upload = Wi-Fi/charging window if network exists, otherwise queue
+ELSE IF motion == moving:
+    interval = 15 seconds
+    upload = batch if network exists, otherwise queue
+ELSE IF charging AND network == Wi-Fi:
+    interval = 10 seconds
+    upload = batch now
+ELSE:
+    interval = 60 seconds
+    upload = batch if network exists, otherwise queue
+
+FOR every record:
+    validate fields
+    assign stable UUID and sequence
+    encrypt payload before local persistence (AES-GCM; key protected by Keystore)
+    persist transactionally
+
+WHEN upload permitted:
+    send UUID, payload hash and ciphertext over authenticated TLS
+    server inserts idempotently by UUID
+    mark local record synced only after matching durable ACK
+    retain unacknowledged records after timeout/interruption
