@@ -1,0 +1,7 @@
+asset_or_threat,attack_vector,mechanism,decision,residual_risk
+Spoofing,Stolen or replayed bearer token,App sandbox + short-lived token + TLS,Partially Blocked,Rooted device/session theft remains possible
+Tampering,Modify local patient database,Encrypted DB + Keystore-backed key,Partially Blocked,Compromised process may access plaintext while unlocked
+Repudiation,Deny a record update,Server append-only audit event + request ID,Partially Blocked,Client clock/log may be manipulated
+Information disclosure,Read token from shared storage,Private app storage + Android Keystore,Blocked on non-rooted OS,Root/debug compromise remains residual
+Denial of service,Repeated expensive sync requests,Rate limiting + bounded retry/backoff,Partially Blocked,Distributed abuse may exhaust resources
+Elevation of privilege,Invoke exported internal component,Non-exported components + signature permission,Blocked if manifest is correct,Misconfigured deep links remain risk
