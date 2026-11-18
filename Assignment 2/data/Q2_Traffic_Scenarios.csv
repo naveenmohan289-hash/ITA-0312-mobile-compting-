@@ -1,0 +1,4 @@
+scenario,arrival_model,description,simulation_events
+Continuous_voice,exponential_interarrival,Long-duration voice sessions,1200
+Bursty_data_10pct,exponential_interarrival,Short data sessions representing low duty cycle traffic,1200
+Synchronized_edge,periodic_with_small_jitter,Short reports arriving in synchronized bursts,800
