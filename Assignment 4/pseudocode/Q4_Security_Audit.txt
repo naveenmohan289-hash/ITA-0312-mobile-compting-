@@ -1,0 +1,13 @@
+FOR each declared asset:
+    identify attacker and attack vector
+    identify OS boundary and control
+    check permission, sandbox, signing, storage and transport configuration
+    classify result as BLOCKED, PARTIALLY BLOCKED or EXPOSED
+    record residual risk and evidence
+
+IF token is shared-readable OR cleartext transport OR unsigned update:
+    verdict = FAIL
+ELSE IF required controls exist but residual risks remain:
+    verdict = CONDITIONAL PASS
+ELSE:
+    verdict = REVIEW REQUIRED
