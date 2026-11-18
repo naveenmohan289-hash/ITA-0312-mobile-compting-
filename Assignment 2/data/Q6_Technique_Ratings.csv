@@ -1,0 +1,6 @@
+technique,capacity,burst_efficiency,interference_resistance,mobility,simplicity,fairness_QoS
+SDMA,4,4,3,4,3,3
+TDMA,3,2,3,4,4,3
+FDMA,2,2,3,3,4,2
+CDMA,4,4,4,4,2,3
+OFDMA,5,5,3,5,3,4
