@@ -1,0 +1,8 @@
+{
+  "platform": "Android",
+  "tls": true,
+  "encrypted_at_rest": true,
+  "exported_internal_component": false,
+  "token_storage": "Android Keystore protected encrypted private app storage",
+  "cleartext_traffic": false
+}
