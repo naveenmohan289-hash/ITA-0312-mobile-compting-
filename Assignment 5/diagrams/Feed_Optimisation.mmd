@@ -1,0 +1,13 @@
+flowchart TD
+ M[Measure frame time battery memory] --> F{Frame budget exceeded?}
+ F -- yes --> Q[Lower decode quality]
+ Q --> P{Still over budget?}
+ P -- yes --> C[Reduce prefetch and evict LRU]
+ P -- no --> S[Apply at frame boundary]
+ F -- no --> B{Battery low?}
+ B -- yes --> R[Reduce prefetch/cache]
+ B -- no --> G[Small cautious prefetch increase]
+ C --> S
+ R --> S
+ G --> S
+ S --> M

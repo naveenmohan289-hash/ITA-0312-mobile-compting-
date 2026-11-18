@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Small_case_1",
+    "items": 3,
+    "battery": 80,
+    "quality_levels": [
+      1,
+      2,
+      3
+    ],
+    "cache_sizes": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "name": "Small_case_2",
+    "items": 8,
+    "battery": 45,
+    "quality_levels": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "cache_sizes": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "name": "Counterexample_case",
+    "items": 20,
+    "battery": 18,
+    "quality_levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cache_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+stateDiagram-v2
+ [*] --> NEW
+ NEW --> VALIDATED: permission and consent pass
+ NEW --> REJECTED: invalid permission or payload
+ VALIDATED --> PERSISTED: encrypted and stored
+ PERSISTED --> QUEUED: enqueue
+ QUEUED --> WAITING_NETWORK: no allowed network
+ WAITING_NETWORK --> QUEUED: network restored
+ QUEUED --> RUNNING: constraints pass
+ RUNNING --> ACKNOWLEDGED: authenticated ACK
+ RUNNING --> WAITING_NETWORK: transient failure
+ RUNNING --> FAILED: permanent failure
+ QUEUED --> CANCELLED: logout or consent revoked
+ WAITING_NETWORK --> CANCELLED: logout or consent revoked
+ ACKNOWLEDGED --> [*]

@@ -1,0 +1,18 @@
+flowchart TD
+ S[Sensor event] --> V{Permission and consent valid?}
+ V -- no --> X[Reject and audit]
+ V -- yes --> E[Validate and encrypt]
+ E --> P[Persist durable outbox]
+ P --> Q[WorkManager upload worker]
+ Q --> C{Network battery Doze feasible?}
+ C -- no --> D[Defer with constraints and backoff]
+ D --> Q
+ C -- yes --> U[Upload encrypted payload]
+ U --> A{Authenticated server ACK?}
+ A -- yes --> R[Commit ACK and advance cursor]
+ A -- transient --> D
+ A -- permanent --> F[Fail or quarantine]
+ S --> N[Critical event classifier]
+ N --> I[Explicit internal alert Intent]
+ I --> T[Privacy-minimised notification]
+ L[Logout or consent revoke] --> K[Cancel jobs and clear transient secrets]

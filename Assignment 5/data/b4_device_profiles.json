@@ -1,0 +1,50 @@
+[
+  {
+    "device": {
+      "name": "Entry_Level",
+      "cpu": 25,
+      "battery": 22
+    },
+    "network": {
+      "kind": "metered",
+      "mbps": 1.2,
+      "max_upload_s": 35
+    }
+  },
+  {
+    "device": {
+      "name": "Mid_Range",
+      "cpu": 55,
+      "battery": 58
+    },
+    "network": {
+      "kind": "good",
+      "mbps": 8,
+      "max_upload_s": 35
+    }
+  },
+  {
+    "device": {
+      "name": "Flagship",
+      "cpu": 95,
+      "battery": 92
+    },
+    "network": {
+      "kind": "good",
+      "mbps": 30,
+      "max_upload_s": 35
+    }
+  },
+  {
+    "device": {
+      "name": "Low_Battery_Device",
+      "cpu": 70,
+      "battery": 12
+    },
+    "network": {
+      "kind": "good",
+      "mbps": 12,
+      "max_upload_s": 35
+    }
+  }
+]

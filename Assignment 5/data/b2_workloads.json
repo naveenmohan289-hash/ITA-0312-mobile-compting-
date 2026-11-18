@@ -1,0 +1,126 @@
+{
+  "Workload_A": [
+    {
+      "id": "A1",
+      "arrival": 1,
+      "priority": 5,
+      "critical": true,
+      "sensitive": true,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    },
+    {
+      "id": "A2",
+      "arrival": 2,
+      "priority": 4,
+      "critical": false,
+      "sensitive": false,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    },
+    {
+      "id": "A3",
+      "arrival": 3,
+      "priority": 3,
+      "critical": false,
+      "sensitive": true,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    },
+    {
+      "id": "A4",
+      "arrival": 4,
+      "priority": 2,
+      "critical": false,
+      "sensitive": false,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    },
+    {
+      "id": "A5",
+      "arrival": 5,
+      "priority": 1,
+      "critical": false,
+      "sensitive": true,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    },
+    {
+      "id": "A6",
+      "arrival": 6,
+      "priority": 3,
+      "critical": false,
+      "sensitive": false,
+      "encrypted": true,
+      "min_battery": 10,
+      "metered_ok": true
+    }
+  ],
+  "Workload_B": [
+    {
+      "id": "B1",
+      "arrival": 1,
+      "priority": 5,
+      "critical": true,
+      "sensitive": true,
+      "encrypted": false,
+      "min_battery": 60,
+      "metered_ok": false
+    },
+    {
+      "id": "B2",
+      "arrival": 2,
+      "priority": 4,
+      "critical": false,
+      "sensitive": true,
+      "encrypted": true,
+      "min_battery": 70,
+      "metered_ok": false
+    },
+    {
+      "id": "B3",
+      "arrival": 3,
+      "priority": 3,
+      "critical": false,
+      "sensitive": false,
+      "encrypted": true,
+      "min_battery": 55,
+      "metered_ok": false
+    },
+    {
+      "id": "B4",
+      "arrival": 4,
+      "priority": 2,
+      "critical": false,
+      "sensitive": true,
+      "encrypted": false,
+      "min_battery": 65,
+      "metered_ok": false
+    },
+    {
+      "id": "B5",
+      "arrival": 5,
+      "priority": 1,
+      "critical": false,
+      "sensitive": false,
+      "encrypted": true,
+      "min_battery": 80,
+      "metered_ok": false
+    },
+    {
+      "id": "B6",
+      "arrival": 6,
+      "priority": 3,
+      "critical": false,
+      "sensitive": true,
+      "encrypted": true,
+      "min_battery": 75,
+      "metered_ok": false
+    }
+  ]
+}
