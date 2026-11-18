@@ -1,0 +1,8 @@
+condition,battery_pct,network,motion,charging,hot,low_power
+P1_full_battery_moving,92,lte,moving,no,no,no
+P2_mid_battery_stationary,55,wifi,stationary,no,no,no
+P3_low_battery_stationary,18,lte,stationary,no,no,yes
+P4_charging_wifi,76,wifi,moving,yes,no,no
+P5_no_network,43,none,moving,no,no,no
+P6_device_hot,48,lte,moving,no,yes,no
+P7_critical_battery,8,none,stationary,no,no,yes
