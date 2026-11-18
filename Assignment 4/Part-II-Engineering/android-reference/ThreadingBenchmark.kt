@@ -1,6 +1,8 @@
 package com.example.assignment4
 
 import android.os.Debug
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import java.util.concurrent.Executors
 import kotlin.math.sqrt
@@ -58,7 +60,7 @@ object ThreadingBenchmark {
             val checksum = futures.sumOf { it.get() }
             val elapsed = (SystemClock.elapsedRealtimeNanos() - wallStart) / 1_000_000
             executor.shutdown()
-            onComplete(BenchmarkResult("B_EXECUTOR", elapsed, -1, checksum, workers))
+            Handler(Looper.getMainLooper()).post {\n                onComplete(BenchmarkResult("B_EXECUTOR", elapsed, -1, checksum, workers))\n            }
         }.start()
     }
 }
