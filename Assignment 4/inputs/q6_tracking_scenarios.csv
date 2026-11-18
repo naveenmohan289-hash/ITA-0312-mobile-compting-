@@ -1,0 +1,8 @@
+scenario,battery_pct,network,motion,charging,hot,low_power
+S1_charging_wifi,85,wifi,moving,yes,no,no
+S2_80pct_lte_moving,80,lte,moving,no,no,no
+S3_20pct_stationary,20,lte,stationary,no,no,yes
+S4_low_power_mode,34,wifi,stationary,no,no,yes
+S5_no_connectivity,62,none,moving,no,no,no
+S6_device_hot,48,lte,moving,no,yes,no
+S7_critical_battery,9,none,stationary,no,no,yes
