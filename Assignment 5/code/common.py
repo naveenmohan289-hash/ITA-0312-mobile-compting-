@@ -21,10 +21,10 @@ def schedule(items,strategy="fifo",scenario=None):
     for x in q:
         m["attempts"]+=1
         if not yes(c.get("permission",True)): reason="permission_revoked_cancel"; m["cancelled"]+=1
+        elif yes(x.get("sensitive",False)) and not yes(x.get("encrypted",False)): reason="unencrypted_sensitive_reject"; m["cancelled"]+=1
         elif yes(c.get("doze",False)) and not yes(x.get("critical",False)): reason="doze_defer"; m["deferred"]+=1
         elif int(c.get("battery",100))<int(x.get("min_battery",20)): reason="low_battery_defer"; m["deferred"]+=1
         elif c.get("network") not in ("good","metered") or (c.get("network")=="metered" and not yes(x.get("metered_ok",False))): reason="network_defer"; m["deferred"]+=1
-        elif yes(x.get("sensitive",False)) and not yes(x.get("encrypted",False)): reason="unencrypted_sensitive_reject"; m["cancelled"]+=1
         else: reason="executed"; m["successful"]+=1
         trace.append({"id":x["id"],"priority":x["priority"],"decision":reason,"battery":c.get("battery"),"network":c.get("network"),"doze":c.get("doze")})
     m["residual"]=m["enqueued"]-m["successful"]-m["cancelled"]
