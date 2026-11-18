@@ -1,0 +1,4 @@
+stage,heap_mb,gc_events,pause_ms,status
+allocation workload start,24,0,0,illustrative model only
+100k allocations,38,2,8,illustrative model only
+500k allocations,52,7,31,illustrative model only
