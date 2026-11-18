@@ -83,10 +83,10 @@ def policy(battery, network, motion, charging=False, hot=False, low_power=False)
         interval, upload, tier = 300, "defer_except_emergency", "critical"
     elif low_power or battery <= 20:
         interval, upload, tier = 120, ("upload_wifi_or_charging" if network!="none" else "queue"), "conserve"
-    elif motion=="moving":
-        interval, upload, tier = 15, ("batch_upload" if network!="none" else "queue"), "normal"
     elif charging and network=="wifi":
         interval, upload, tier = 10, "upload_batch_now", "charging"
+    elif motion=="moving":
+        interval, upload, tier = 15, ("batch_upload" if network!="none" else "queue"), "normal"
     else:
         interval, upload, tier = 60, ("batch_upload" if network!="none" else "queue"), "balanced"
     # Transparent synthetic energy model, mAh per 10-minute cycle.
