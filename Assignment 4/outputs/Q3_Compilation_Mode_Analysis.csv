@@ -1,0 +1,4 @@
+runtime_mode,cpu_bound,cold_start,steady_state,storage,evidence_status
+verify / interpreter-heavy,highest expected penalty,lower compilation work initially,slower hot loop,less compiled-code footprint,prediction; execute adb compile command
+speed-profile,profile-hot paths compiled,moderate profile/compilation cost,fast for hot paths,moderate,prediction; execute adb compile command
+speed,broad AOT optimisation,install/compile cost may rise,fastest compiled hot path,higher compiled-code footprint,prediction; execute adb compile command
