@@ -1,0 +1,7 @@
+criterion,weight
+Capacity,0.22
+Burst_efficiency,0.20
+Interference_resistance,0.18
+Mobility,0.16
+Simplicity,0.10
+Fairness_QoS,0.14
