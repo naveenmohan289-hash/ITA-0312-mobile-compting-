@@ -1,0 +1,4 @@
+case,expected_interval_s,prototype_interval_s,expected_upload,prototype_upload,match,energy_estimate_mAh
+1,15,15,batch_upload,batch_upload,PASS,0.26
+2,120,120,upload_wifi_or_charging,upload_wifi_or_charging,PASS,0.04
+3,300,300,defer_except_emergency,defer_except_emergency,PASS,0.004
