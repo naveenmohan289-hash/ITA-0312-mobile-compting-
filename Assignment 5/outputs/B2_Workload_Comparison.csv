@@ -1,0 +1,3 @@
+strategy,enqueued,deferred,cancelled,successful,attempts,peak_workers,residual,workload
+priority,6,0,0,6,6,1,0,Workload_A
+priority,6,4,2,0,6,1,4,Workload_B

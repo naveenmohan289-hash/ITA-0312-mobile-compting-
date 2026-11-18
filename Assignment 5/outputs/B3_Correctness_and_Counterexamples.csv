@@ -1,0 +1,4 @@
+case,items,exact_cost,approx_cost,match,exact_configurations,approx_iterations,approx_quality_changes,approx_cache_evictions,exact_quality,exact_cache,approx_quality,approx_cache
+Small_case_1,3,15.76,34.12,False,9,5,2,2,3,3,1,1
+Small_case_2,8,12.08,39.62,False,16,5,2,2,4,4,1,1
+Counterexample_case,20,16.45,52.82,False,25,5,2,2,5,5,1,1
