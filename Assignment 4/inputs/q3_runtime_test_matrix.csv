@@ -1,0 +1,6 @@
+run_id,compilation_filter,workload,prediction,device_evidence_required
+R1,verify,CPU loop,slowest hot-loop execution; low compiled footprint,adb cmd package compile -m verify -f
+R2,speed-profile,CPU loop,profile-hot methods compiled; balanced startup and steady state,adb cmd package compile -m speed-profile -f
+R3,speed,CPU loop,larger compiled footprint; fastest compiled hot path,adb cmd package compile -m speed -f
+R4,default,allocation,GC count and pause trend should be recorded,adb logcat -s art:I
+R5,default,UI list,frame timing and main-thread stalls should be recorded,Perfetto or Android Studio Profiler
