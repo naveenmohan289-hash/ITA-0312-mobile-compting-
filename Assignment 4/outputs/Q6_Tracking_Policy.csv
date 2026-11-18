@@ -1,0 +1,8 @@
+scenario,sampling_interval_s,upload_action,policy_state,estimated_energy_mAh_per_10min,encrypted_before_queue,authenticated_tls_upload,queue_action
+S1_charging_wifi,15,batch_upload,normal,0.26,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S2_80pct_lte_moving,15,batch_upload,normal,0.26,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S3_20pct_stationary,120,upload_wifi_or_charging,conserve,0.04,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S4_low_power_mode,120,upload_wifi_or_charging,conserve,0.04,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S5_no_connectivity,15,queue,normal,0.08,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S6_device_hot,300,defer_except_emergency,critical,0.004,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
+S7_critical_battery,300,defer_except_emergency,critical,0.004,YES AES-GCM Keystore key assumed,YES when upload occurs,retain until server ACK with stable UUID
