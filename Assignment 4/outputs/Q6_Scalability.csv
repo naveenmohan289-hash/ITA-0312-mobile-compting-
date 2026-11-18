@@ -1,0 +1,5 @@
+simulated_devices,records,policy_evaluations,batch_wakeups,queue_memory_estimate_kb,observation
+1,100,100,5,65.0,model estimate; radio batching does not remove sensor sampling cost
+5,1000,1000,50,650.0,model estimate; radio batching does not remove sensor sampling cost
+10,10000,10000,500,6500.0,model estimate; radio batching does not remove sensor sampling cost
+20,20000,20000,1000,13000.0,model estimate; radio batching does not remove sensor sampling cost
