@@ -5,10 +5,10 @@ Writes question-numbered CSV outputs under Assignment/outputs/.
 import csv, random, math
 from pathlib import Path
 import numpy as np
+from common import save_csv
 OUT=Path(__file__).parent/"outputs"; OUT.mkdir(exist_ok=True)
 def save(name, header, rows):
-    with open(OUT/name,"w",newline="",encoding="utf-8") as f:
-        w=csv.writer(f); w.writerow(header); w.writerows(rows)
+    save_csv(OUT / name, header, rows)
 
 # Q1: offline meter readings, immediate attempt vs 60 one-minute retries.
 random.seed(42); rows=[]
