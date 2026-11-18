@@ -1,0 +1,5 @@
+parameter,value,unit,description
+devices,5000,devices,Number of low-rate sensor devices
+channels,80,channels,Number of parallel transmission opportunities per second
+report_size,200,bytes,Payload size per report
+report_interval,60,seconds,Nominal reporting interval
