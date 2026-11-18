@@ -1,0 +1,5 @@
+workload,operations,expected_characteristic
+medium_cpu,4 chunks x 350000 iterations,parallelism may be limited by runtime and GIL
+tiny_cpu,4 tasks x 10 iterations,thread scheduling overhead can dominate
+allocation,500000 short-lived objects,GC pressure and heap growth
+ui_render,1000 row list,main-thread layout and binding can cause frame jank
